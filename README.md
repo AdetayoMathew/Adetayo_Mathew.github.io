@@ -103,6 +103,6 @@ Some of the data visuals that may be appropriate in answering our questions incl
 2. Treemap
 3. Scorecards
 4. Horizontal bar chart
-   <img width="672" alt="dashboard_mockup" src="https://github.com/user-attachments/assets/b6139a21-3d07-447d-9258-a4e3f55667f5">
+<img width="672" alt="dashboard_mockup" src="https://github.com/user-attachments/assets/b6139a21-3d07-447d-9258-a4e3f55667f5">
 
 
