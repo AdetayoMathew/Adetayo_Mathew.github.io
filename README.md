@@ -195,5 +195,6 @@ SELECT
 
 FROM
     [youtube_db].[dbo].[ top_uk_youtubers_2024];
+```
 ![Screenshot (881)](https://github.com/user-attachments/assets/e2c53592-140c-4151-b42c-950a5aeab97c)
 
