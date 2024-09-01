@@ -130,12 +130,7 @@ Some of the data visuals that may be appropriate in answering our questions incl
 8. Write the documentation + commentary
 9. Publish the data to GitHub Pages
 
-## Data exploration notes
-
-This is the stage where you have a scan of what's in the data, errors, inconcsistencies, bugs, weird and corrupted characters etc  
-
-
-- What are your initial observations with this dataset? What's caught your attention so far? 
+## Data exploration 
 
 1. There are at least 4 columns that contain the data we need for this analysis, which signals we have everything we need from the file without needing to contact the client for any more data. 
 2. The first column contains the channel ID with what appears to be channel IDS, which are separated by a @ symbol - we need to extract the channel names from this.
@@ -147,11 +142,6 @@ This is the stage where you have a scan of what's in the data, errors, inconcsis
 
 
 ## Data cleaning 
-- What do we expect the clean data to look like? (What should it contain? What contraints should we apply to it?)
-
-The aim is to refine our dataset to ensure it is structured and ready for analysis. 
-
-The cleaned data should meet the following criteria and constraints:
 
 - Only relevant columns should be retained.
 - All data types should be appropriate for the contents of each column.
@@ -188,6 +178,40 @@ And here is a tabular representation of the expected schema for the clean data:
 
 
 ### Transform the data 
+-- 1. Select the required columns
+-- 2. Extract the channel name from the 'NOMBRE' column
+*/
+
+-- 
+SELECT
+    SUBSTRING(NOMBRE, 1, CHARINDEX('@', NOMBRE) -1) AS channel_name,  
+    total_subscribers,
+    total_views,
+    total_videos
+
+FROM
+    [youtube_db].[dbo].[top_uk_youtubers_2024];
+
+/*
+# 1. Create a view to store the transformed data
+# 2. Cast the extracted channel name as VARCHAR(100)
+# 3. Select the required columns from the top_uk_youtubers_2024 SQL table 
+*/
+
+-- 
+CREATE VIEW view_uk_youtubers_2024 AS
+
+-- 
+SELECT
+    CAST(SUBSTRING(NOMBRE, 1, CHARINDEX('@', NOMBRE) -1) AS VARCHAR(100)) AS channel_name, -- 2. 
+    total_subscribers,
+    total_views,
+    total_videos
+
+-- 
+FROM
+    [youtube_db].[dbo].[top_uk_youtubers_2024];
+
 
 
 
