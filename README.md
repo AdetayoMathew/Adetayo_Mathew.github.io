@@ -132,11 +132,13 @@ Some of the data visuals that may be appropriate in answering our questions incl
 
 ## Data exploration 
 
+
 1. There are at least 4 columns that contain the data we need for this analysis, which signals we have everything we need from the file without needing to contact the client for any more data. 
 2. The first column contains the channel ID with what appears to be channel IDS, which are separated by a @ symbol - we need to extract the channel names from this.
 3. Some of the cells and header names are in a different language - we need to confirm if these columns are needed, and if so, we need to address them.
 4. We have more data than we need, so some of these columns would need to be removed
 
+![Screenshot (882)](https://github.com/user-attachments/assets/517043af-c56a-441a-aff3-c7121ada60b9)
 
 
 
@@ -193,3 +195,5 @@ SELECT
 
 FROM
     [youtube_db].[dbo].[ top_uk_youtubers_2024];
+![Screenshot (881)](https://github.com/user-attachments/assets/e2c53592-140c-4151-b42c-950a5aeab97c)
+
